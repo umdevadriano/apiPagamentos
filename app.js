@@ -13,7 +13,9 @@ const db = getFirestore();
 
 // Inicializando o Express
 const app = express();
-const PORT = 3000;
+// Porta em que o servidor irá ouvir
+const PORT = process.env.PORT || 3000;
+
 
 // Middleware para interpretar JSON
 app.use(express.json());
