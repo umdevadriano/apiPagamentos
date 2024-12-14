@@ -24,6 +24,16 @@ app.use(express.json());
 const COLLECTION_NAME = 'items';
 
 // Rota para incluir um novo item
+app.post('/', async (req, res) => {
+    try {
+    res.send('tudo certo por aqui')
+      res.status(201).json({ id: docRef.id, message: 'Item incluído com sucesso!' });
+    } catch (error) {
+      res.status(500).json({ message: 'error.', error: error.message });
+    }
+  });
+
+// Rota para incluir um novo item
 app.post('/items', async (req, res) => {
   try {
     const newItem = req.body;
