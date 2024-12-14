@@ -1,15 +1,15 @@
 // Importando dependências
 const express = require('express');
-const { initializeApp, applicationDefault } = require('firebase-admin/app');
-const { getFirestore } = require('firebase-admin/firestore');
+// const { initializeApp, applicationDefault } = require('firebase-admin/app');
+// const { getFirestore } = require('firebase-admin/firestore');
 
 // Inicializando o Firebase Admin
-initializeApp({
-  credential: applicationDefault(),
-});
+// initializeApp({
+//   credential: applicationDefault(),
+// });
 
 // Criando uma instância do Firestore
-const db = getFirestore();
+// const db = getFirestore();
 
 // Inicializando o Express
 const app = express();
@@ -27,7 +27,6 @@ const COLLECTION_NAME = 'items';
 app.post('/', async (req, res) => {
     try {
     res.send('tudo certo por aqui')
-      res.status(201).json({ id: docRef.id, message: 'Item incluído com sucesso!' });
     } catch (error) {
       res.status(500).json({ message: 'error.', error: error.message });
     }
