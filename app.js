@@ -21,14 +21,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Nome da coleção no Firestore
-const COLLECTION_NAME = 'items';
+// const COLLECTION_NAME = 'items';
 
 // Rota para incluir um novo item
-app.post('/', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
-    res.send('tudo certo por aqui')
+        res.status(200).send("certo por aqui");
     } catch (error) {
-      res.status(500).json({ message: 'error.', error: error.message });
+        res.status(400).send('deu ruin');
     }
   });
 
